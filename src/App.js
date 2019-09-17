@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import logo from './logo.svg';
 import './App.css';
-import Person from './Person';
-import { ThemeProvider } from './themeProvider';
+import Person from './component-library/Person';
+import { ThemeProvider } from './component-library/themeProvider';
 import { theme } from './theme';
 
 const App = () => {
