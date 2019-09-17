@@ -1,12 +1,30 @@
 import React from 'react';
-import withTheme from './hoc/withTheme';
+import { useTheme } from './themeProvider';
 
 const Person = ({ onClick, name }) => {
+  const theme = useTheme();
+
+  const flattenedStyle = {
+    ...styles.person,
+    ...{ color: theme.primaryColor }
+  };
+
   return (
-    <div name={name} onClick={onClick.bind(this, 'Mane')}>
+    <div
+      style={flattenedStyle}
+      name={name}
+      onClick={onClick.bind(this, 'Mane')}
+    >
       Person is here
     </div>
   );
 };
 
-export default withTheme(Person);
+const styles = {
+  person: {
+    fontSize: 24,
+    fontWeight: '600'
+  }
+};
+
+export default Person;
