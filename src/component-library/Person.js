@@ -6,7 +6,7 @@ const Person = ({ onClick, name }) => {
 
   const flattenedStyle = {
     ...styles.person,
-    ...{ color: theme.primaryColor }
+    ...{ color: theme.GLOBAL.primaryColor }
   };
 
   return (
